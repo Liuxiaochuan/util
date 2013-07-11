@@ -87,10 +87,10 @@ bool LxcSocket::shutdown(int how)
 void LxcSocket::close()
 {
 #ifdef WIN32
-	closesocket(m_socket);
+	::closesocket(m_socket);
 	m_socket = INVALID_SOCKET;
 #else
-	close(m_socket);
+	::close(m_socket);
 #endif
 }
 
