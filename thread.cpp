@@ -7,7 +7,7 @@ Thread::Thread() : m_started(false), m_detached(false)
 
 Thread::~Thread()
 {
-  stop();
+	stop();
 }
 
 void Thread::start()
