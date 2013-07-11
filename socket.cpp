@@ -94,6 +94,27 @@ void LxcSocket::close()
 #endif
 }
 
+bool LxcSocket::nonBlock(bool enable)
+{
+#ifdef WIN32
+	unsigned long value = enable ? 1 : 0;
+	return SOCKET_ERROR == ::ioctlsocket(m_socket, FIONBIO, &value);
+#else
+#endif
+}
+
+bool LxcSocket::wouldBolck(int error)
+{
+#ifdef WIN32
+	if (SOCKET_ERROR == error)
+	{
+		return WSAEWOULDBLOCK == WSAGetLastError();
+	}
+#else
+#endif	
+	return false;
+}
+
 int LxcSocket::read(char* buf, int len)
 {
 	return recv(m_socket, buf, len, 0);
