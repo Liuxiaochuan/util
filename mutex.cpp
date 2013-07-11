@@ -3,7 +3,7 @@
 Mutex::Mutex()
 {
 #ifdef WIN32
-  InitializeCriticalSection(&m_mutex);
+	InitializeCriticalSection(&m_mutex);
 #else
 	pthread_mutex_init(&m_mutex, NULL);
 #endif
