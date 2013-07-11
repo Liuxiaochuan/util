@@ -2,7 +2,7 @@
 
 LxcSocket::LxcSocket()
 {
-  m_socket = INVALID_SOCKET;
+	m_socket = INVALID_SOCKET;
 }
 
 LxcSocket::LxcSocket(SOCKET handle)
