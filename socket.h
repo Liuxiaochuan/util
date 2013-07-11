@@ -33,6 +33,10 @@ public:
 	void close();
 
 public:
+	bool nonBlock(bool enable);
+	bool wouldBolck(int error);
+
+public:
 	int read(char* buf, int len);
 	int write(const char* buf, int len);
 	bool writeAll(const char* buf, int len);
