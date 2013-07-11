@@ -13,7 +13,7 @@ typedef int SOCKET;
 class LxcSocket
 {
 public:
-  LxcSocket();
+	LxcSocket();
 	explicit LxcSocket(SOCKET handle);
 	virtual ~LxcSocket();
 
