@@ -103,7 +103,7 @@ void Thread::detach()
 #ifdef WIN32
 unsigned __stdcall Thread::Func(void* para)
 #else
-void* Func(void* para)
+void* Thread::Func(void* para)
 #endif
 {
 	Thread* thread = (Thread*)para;
